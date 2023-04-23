@@ -1,4 +1,4 @@
-package mrandroid.attendance.activity;
+package mrandroid.app.activity.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import mrandroid.attendance.databinding.ActivityLoginBinding;
-import mrandroid.attendance.util.LoadingDialog;
+import mrandroid.app.activity.main.HomeActivity;
+import mrandroid.app.databinding.ActivityLoginBinding;
+import mrandroid.app.util.LoadingDialog;
 
 public class LoginActivity extends AppCompatActivity {
 

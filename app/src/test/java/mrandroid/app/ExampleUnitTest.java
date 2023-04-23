@@ -1,4 +1,4 @@
-package mrandroid.attendance;
+package mrandroid.app;
 
 import org.junit.Test;
 

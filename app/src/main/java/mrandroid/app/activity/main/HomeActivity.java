@@ -1,12 +1,10 @@
-package mrandroid.attendance.activity;
-
-import androidx.appcompat.app.AppCompatActivity;
+package mrandroid.app.activity.main;
 
 import android.os.Bundle;
 
-import mrandroid.attendance.R;
-import mrandroid.attendance.databinding.ActivityHomeBinding;
-import mrandroid.attendance.databinding.ActivitySplashBinding;
+import androidx.appcompat.app.AppCompatActivity;
+
+import mrandroid.app.databinding.ActivityHomeBinding;
 
 public class HomeActivity extends AppCompatActivity {
 

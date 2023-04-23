@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'mrandroid.attendance'
+    namespace 'mrandroid.app'
     compileSdk 33
 
     defaultConfig {
-        applicationId "mrandroid.attendance"
+        applicationId "mrandroid.app"
         minSdk 21
         targetSdk 33
         versionCode 1

@@ -1,6 +1,5 @@
-package mrandroid.attendance.activity;
+package mrandroid.app.activity.auth;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,8 +8,8 @@ import android.view.animation.AnimationUtils;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import mrandroid.attendance.R;
-import mrandroid.attendance.databinding.ActivitySplashBinding;
+import mrandroid.app.R;
+import mrandroid.app.databinding.ActivitySplashBinding;
 
 public class SplashActivity extends AppCompatActivity {
 
