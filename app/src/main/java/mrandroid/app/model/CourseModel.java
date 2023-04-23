@@ -1,7 +1,12 @@
 package mrandroid.app.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class CourseModel {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String courseName;
     private String teacherName;

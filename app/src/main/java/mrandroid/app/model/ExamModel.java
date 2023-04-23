@@ -1,7 +1,12 @@
 package mrandroid.app.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class ExamModel {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String question;
     private String option1;
