@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tvCourseName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Course"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvTeacherName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_4sdp"
@@ -37,10 +37,10 @@
         android:textColor="?attr/colorOnSecondary"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCourseName" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_8sdp"
@@ -49,6 +49,6 @@
         android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTeacherName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

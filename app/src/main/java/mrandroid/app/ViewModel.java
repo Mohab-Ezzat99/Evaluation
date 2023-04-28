@@ -17,8 +17,8 @@ public class ViewModel extends AndroidViewModel {
         repository = new Repository(application);
     }
 
-    public void insertCourses(List<CourseModel> courses) {
-        repository.insertCourses(courses);
+    public void insertCourse(CourseModel courseModel) {
+        repository.insertCourse(courseModel);
     }
 
     public LiveData<List<CourseModel>> getAllCourses() {

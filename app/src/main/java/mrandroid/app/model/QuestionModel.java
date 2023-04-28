@@ -5,13 +5,15 @@ public class QuestionModel {
     private String question;
     private String option1;
     private String option2;
-    private int isOption1Correct;
+    private int answer;
+    private int selectedAnswer;
 
-    public QuestionModel(String question, String option1, String option2, int isOption1Correct) {
+    public QuestionModel(String question, String option1, String option2, int answer,int selectedAnswer) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
-        this.isOption1Correct = isOption1Correct;
+        this.answer = answer;
+        this.selectedAnswer = selectedAnswer;
     }
 
     public String getQuestion() {
@@ -38,12 +40,20 @@ public class QuestionModel {
         this.option2 = option2;
     }
 
-    public int isOption1Correct() {
-        return isOption1Correct;
+    public int getAnswer() {
+        return answer;
     }
 
-    public void setOption1Correct(int option1Correct) {
-        isOption1Correct = option1Correct;
+    public void setAnswer(int correctAnswer) {
+        this.answer = correctAnswer;
+    }
+
+    public int getSelectedAnswer() {
+        return selectedAnswer;
+    }
+
+    public void setSelectedAnswer(int selectedAnswer) {
+        this.selectedAnswer = selectedAnswer;
     }
 
     public boolean isFieldsEmpty() {
@@ -51,6 +61,10 @@ public class QuestionModel {
     }
 
     public boolean isAnswerRequired() {
-        return (isOption1Correct == -1);
+        return (answer == -1);
+    }
+
+    public boolean isAnswerCorrect() {
+        return (answer == selectedAnswer);
     }
 }

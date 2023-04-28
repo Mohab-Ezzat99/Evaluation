@@ -8,13 +8,12 @@ import androidx.room.Query;
 import java.util.List;
 import io.reactivex.rxjava3.core.Completable;
 import mrandroid.app.model.CourseModel;
-import mrandroid.app.model.QuestionModel;
 
 @Dao
 public interface AppDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    Completable insertCourses(List<CourseModel> courses);
+    Completable insertCourse(CourseModel courseModel);
 
     @Query("SELECT * FROM CourseModel")
     LiveData<List<CourseModel>> getAllCourses();

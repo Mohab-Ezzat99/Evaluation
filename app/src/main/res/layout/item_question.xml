@@ -27,7 +27,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
-        android:id="@+id/radioGroup2"
+        android:id="@+id/rgOptions"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/itl_option2"
@@ -62,7 +62,7 @@
         android:hint="Option 1"
         android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="@+id/itl_question"
-        app:layout_constraintStart_toEndOf="@+id/radioGroup2"
+        app:layout_constraintStart_toEndOf="@+id/rgOptions"
         app:layout_constraintTop_toBottomOf="@+id/itl_question">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -84,7 +84,7 @@
         android:textColorHint="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/itl_question"
-        app:layout_constraintStart_toEndOf="@+id/radioGroup2"
+        app:layout_constraintStart_toEndOf="@+id/rgOptions"
         app:layout_constraintTop_toBottomOf="@+id/itl_option1">
 
         <com.google.android.material.textfield.TextInputEditText

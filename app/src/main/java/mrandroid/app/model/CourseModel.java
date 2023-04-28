@@ -4,6 +4,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 public class CourseModel implements Serializable {
@@ -17,9 +18,9 @@ public class CourseModel implements Serializable {
     private float price;
     private float rate;
     private String description;
-    private QuestionModel questionModel;
+    private List<QuestionModel> questionModels;
 
-    public CourseModel(String courseName, String videoUrl, String teacherName, String teacherPhone, float price, float rate, String description, QuestionModel questionModel) {
+    public CourseModel(String courseName, String videoUrl, String teacherName, String teacherPhone, float price, float rate, String description, List<QuestionModel> questionModels) {
         this.courseName = courseName;
         this.videoUrl = videoUrl;
         this.teacherName = teacherName;
@@ -27,7 +28,7 @@ public class CourseModel implements Serializable {
         this.price = price;
         this.rate = rate;
         this.description = description;
-        this.questionModel = questionModel;
+        this.questionModels = questionModels;
     }
 
     public int getId() {
@@ -94,11 +95,11 @@ public class CourseModel implements Serializable {
         this.description = description;
     }
 
-    public QuestionModel getQuestionModel() {
-        return questionModel;
+    public List<QuestionModel> getQuestionModels() {
+        return questionModels;
     }
 
-    public void setQuestionModel(QuestionModel questionModel) {
-        this.questionModel = questionModel;
+    public void setQuestionModels(List<QuestionModel> questionModels) {
+        this.questionModels = questionModels;
     }
 }
