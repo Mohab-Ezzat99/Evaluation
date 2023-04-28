@@ -8,7 +8,7 @@ import androidx.room.Query;
 import java.util.List;
 import io.reactivex.rxjava3.core.Completable;
 import mrandroid.app.model.CourseModel;
-import mrandroid.app.model.ExamModel;
+import mrandroid.app.model.QuestionModel;
 
 @Dao
 public interface AppDao {
@@ -21,14 +21,5 @@ public interface AppDao {
 
     @Query("DELETE FROM CourseModel")
     Completable deleteAllCourses();
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    Completable insertExams(List<ExamModel> exams);
-
-    @Query("SELECT * FROM ExamModel")
-    LiveData<List<ExamModel>> getAllExams();
-
-    @Query("DELETE FROM ExamModel")
-    Completable deleteAllExams();
 
 }

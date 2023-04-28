@@ -15,9 +15,9 @@ public class CourseModel {
     private String description;
     private float price;
     private float rate;
-    private ExamModel examModel;
+    private QuestionModel questionModel;
 
-    public CourseModel(String courseName, String teacherName, String teacherPhone, String videoUrl, String description, float price, float rate, ExamModel examModel) {
+    public CourseModel(String courseName, String teacherName, String teacherPhone, String videoUrl, String description, float price, float rate, QuestionModel questionModel) {
         this.courseName = courseName;
         this.teacherName = teacherName;
         this.teacherPhone = teacherPhone;
@@ -25,7 +25,7 @@ public class CourseModel {
         this.description = description;
         this.price = price;
         this.rate = rate;
-        this.examModel = examModel;
+        this.questionModel = questionModel;
     }
 
     public int getId() {
@@ -92,11 +92,11 @@ public class CourseModel {
         this.rate = rate;
     }
 
-    public ExamModel getExamModel() {
-        return examModel;
+    public QuestionModel getQuestionModel() {
+        return questionModel;
     }
 
-    public void setExamModel(ExamModel examModel) {
-        this.examModel = examModel;
+    public void setQuestionModel(QuestionModel questionModel) {
+        this.questionModel = questionModel;
     }
 }

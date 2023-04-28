@@ -8,7 +8,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 import mrandroid.app.database.AppDB;
 import mrandroid.app.database.AppDao;
 import mrandroid.app.model.CourseModel;
-import mrandroid.app.model.ExamModel;
+import mrandroid.app.model.QuestionModel;
 
 public class Repository {
     private final AppDao appDao;
@@ -30,24 +30,6 @@ public class Repository {
 
     public void deleteAllCourses() {
         appDao.deleteAllCourses()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe();
-    }
-
-    public void insertExams(List<ExamModel> exams) {
-        appDao.insertExams(exams)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe();
-    }
-
-    public LiveData<List<ExamModel>> getAllExams() {
-        return appDao.getAllExams();
-    }
-
-    public void deleteAllExams() {
-        appDao.deleteAllExams()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe();

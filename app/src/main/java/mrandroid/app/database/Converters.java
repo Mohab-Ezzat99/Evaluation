@@ -7,6 +7,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 import mrandroid.app.model.CourseModel;
 import mrandroid.app.model.ExamModel;
+import mrandroid.app.model.QuestionModel;
 
 public class Converters {
 
@@ -22,13 +23,25 @@ public class Converters {
     }
 
     @TypeConverter
-    public String convertToExamString(List<ExamModel> exams){
-        return new Gson().toJson(exams);
+    public String convertToQuestionString(QuestionModel question){
+        return new Gson().toJson(question);
     }
 
     @TypeConverter
-    public List<ExamModel> convertToExamList(String stringList){
-        Type listType = new TypeToken<List<ExamModel>>(){}.getType();
-        return new Gson().fromJson(stringList,listType);
+    public QuestionModel convertToQuestionModel(String string){
+        Type type = new TypeToken<QuestionModel>(){}.getType();
+        return new Gson().fromJson(string,type);
     }
+
+    @TypeConverter
+    public String convertToExamString(ExamModel exam){
+        return new Gson().toJson(exam);
+    }
+
+    @TypeConverter
+    public ExamModel convertToExamModel(String string){
+        Type type = new TypeToken<ExamModel>(){}.getType();
+        return new Gson().fromJson(string,type);
+    }
+
 }

@@ -6,7 +6,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import java.util.List;
 import mrandroid.app.model.CourseModel;
-import mrandroid.app.model.ExamModel;
+import mrandroid.app.model.QuestionModel;
 
 public class ViewModel extends AndroidViewModel {
 
@@ -27,18 +27,6 @@ public class ViewModel extends AndroidViewModel {
 
     public void deleteAllCourses() {
         repository.deleteAllCourses();
-    }
-
-    public void insertExams(List<ExamModel> exams) {
-        repository.insertExams(exams);
-    }
-
-    public LiveData<List<ExamModel>> getAllExams() {
-        return repository.getAllExams();
-    }
-
-    public void deleteAllExams() {
-        repository.deleteAllExams();
     }
 
 }
