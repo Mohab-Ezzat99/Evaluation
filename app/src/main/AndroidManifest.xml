@@ -32,7 +32,7 @@
         <activity
             android:name=".activity.teacher.AddExamActivity"
             android:exported="false"
-            android:label="Add Questions">
+            android:label="Questions">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -48,7 +48,8 @@
         <activity
             android:name=".activity.auth.SignupActivity"
             android:exported="false"
-            android:label="Signup">
+            android:label="Signup"
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -64,6 +65,11 @@
         <activity
             android:name=".activity.auth.SplashActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -71,12 +77,9 @@
         <activity
             android:name=".activity.main.HomeActivity"
             android:exported="true"
-            android:label="Home">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:label="Home"
+            android:windowSoftInputMode="adjustResize">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

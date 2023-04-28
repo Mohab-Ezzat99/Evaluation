@@ -1,6 +1,7 @@
 package mrandroid.app.activity.teacher;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,13 +32,23 @@ public class AddExamActivity extends AppCompatActivity {
 
         CourseModel courseModel = (CourseModel) getIntent().getSerializableExtra(Constants.COURSE_MODEL);
         int questionsNumber = (int) getIntent().getSerializableExtra(Constants.QUESTIONS_NUMBER);
+        boolean isInsertion = (boolean) getIntent().getSerializableExtra(Constants.IS_INSERTION);
 
-        questionsAdapter.setList(initQuestionsList(questionsNumber));
-        questionsAdapter.setCanEdit(true);
         binding.rvQuestions.setAdapter(questionsAdapter);
 
-        binding.btnSubmit.setOnClickListener(view -> validateAndSubmit(courseModel));
+        binding.btnSubmit.setOnClickListener(view -> {
+            if (isInsertion) validateAndInsert(courseModel);
+            else validateAndScore();
+        });
 
+        questionsAdapter.setList(courseModel.getQuestionModels());
+
+        if (courseModel.getQuestionModels()!=null)
+            questionsAdapter.setList(courseModel.getQuestionModels());
+        else {
+            questionsAdapter.setList(initQuestionsList(questionsNumber));
+            questionsAdapter.setCanEdit(true);
+        }
     }
 
     private ArrayList<QuestionModel> initQuestionsList(int questionsNumber) {
@@ -48,8 +59,9 @@ public class AddExamActivity extends AppCompatActivity {
         return questionModels;
     }
 
-    private void validateAndSubmit(CourseModel courseModel) {
+    private void validateAndInsert(CourseModel courseModel) {
         questionsAdapter.notifyDataSetChanged();
+        questionsAdapter.setList(questionsAdapter.getList());
 
         if (questionsAdapter.isFieldsRequired()) {
             Toast.makeText(this, "Fields are required", Toast.LENGTH_SHORT).show();
@@ -64,5 +76,20 @@ public class AddExamActivity extends AppCompatActivity {
         courseModel.setQuestionModels(questionsAdapter.getList());
         viewModel.insertCourse(courseModel);
         finish();
+    }
+
+    private void validateAndScore() {
+        if (questionsAdapter.isFieldsRequired()) {
+            Toast.makeText(this, "Fields are required", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (questionsAdapter.isAnswerRequired()) {
+            Toast.makeText(this, "Answers are required", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        binding.tvScore.setVisibility(View.VISIBLE);
+        binding.tvScore.setText(questionsAdapter.calculateScore());
     }
 }

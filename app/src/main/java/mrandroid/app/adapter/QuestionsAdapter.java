@@ -39,9 +39,15 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.Medi
         holder.et_option1.setEnabled(canEdit);
         holder.et_option2.setEnabled(canEdit);
 
-        item.setQuestion(Objects.requireNonNull(holder.et_question.getText()).toString());
-        item.setOption1(Objects.requireNonNull(holder.et_option1.getText()).toString());
-        item.setOption2(Objects.requireNonNull(holder.et_option2.getText()).toString());
+        if(canEdit) {
+            item.setQuestion(Objects.requireNonNull(holder.et_question.getText()).toString());
+            item.setOption1(Objects.requireNonNull(holder.et_option1.getText()).toString());
+            item.setOption2(Objects.requireNonNull(holder.et_option2.getText()).toString());
+        } else  {
+            holder.et_question.setText(item.getQuestion());
+            holder.et_option1.setText(item.getOption1());
+            holder.et_option2.setText(item.getOption2());
+        }
 
         holder.rgOptions.setOnCheckedChangeListener((radioGroup, i) -> {
             if (canEdit) {
@@ -89,6 +95,16 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.Medi
         this.listener = listener;
     }
 
+    @Override
+    public long getItemId(int position) {
+        return super.getItemId(position);
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
+
     public boolean isFieldsRequired() {
         for (QuestionModel questionModel : list) {
             if (questionModel.isFieldsEmpty()) return true;
@@ -103,12 +119,12 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.Medi
         return false;
     }
 
-    private String calculateScore() {
+    public String calculateScore() {
         int correctCounter = 0;
         for (QuestionModel questionModel : list) {
             if (questionModel.isAnswerCorrect()) correctCounter++;
         }
-        return correctCounter + "from" + (list.size() + 1);
+        return "Score: "+correctCounter + " from " + list.size();
     }
 
     static class MedicineViewHolder extends RecyclerView.ViewHolder {

@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:fitsSystemWindows="true">
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -94,46 +93,20 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_12sdp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/itl_confPassword"
-            app:layout_constraintStart_toStartOf="@+id/itl_confPassword"
-            app:layout_constraintTop_toBottomOf="@+id/itl_confPassword">
-
-            <RadioButton
-                android:id="@+id/radioButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:checked="true"
-                android:text="Student" />
-
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Teacher" />
-        </RadioGroup>
-
         <Button
             android:id="@+id/btn_register"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="?attr/colorPrimaryVariant"
             android:text="Register"
-            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_16sdp"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="@dimen/_12ssp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/itl_email"
             app:layout_constraintStart_toStartOf="@+id/itl_email"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+            app:layout_constraintTop_toBottomOf="@+id/itl_confPassword" />
 
         <TextView
             android:id="@+id/textView2"

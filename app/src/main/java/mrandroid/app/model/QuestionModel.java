@@ -1,6 +1,8 @@
 package mrandroid.app.model;
 
-public class QuestionModel {
+import java.io.Serializable;
+
+public class QuestionModel implements Serializable {
 
     private String question;
     private String option1;
@@ -66,5 +68,16 @@ public class QuestionModel {
 
     public boolean isAnswerCorrect() {
         return (answer == selectedAnswer);
+    }
+
+    @Override
+    public String toString() {
+        return "QuestionModel{" +
+                "question='" + question + '\'' +
+                ", option1='" + option1 + '\'' +
+                ", option2='" + option2 + '\'' +
+                ", answer=" + answer +
+                ", selectedAnswer=" + selectedAnswer +
+                '}';
     }
 }

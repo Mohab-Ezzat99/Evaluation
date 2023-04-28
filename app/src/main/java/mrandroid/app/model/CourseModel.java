@@ -102,4 +102,19 @@ public class CourseModel implements Serializable {
     public void setQuestionModels(List<QuestionModel> questionModels) {
         this.questionModels = questionModels;
     }
+
+    @Override
+    public String toString() {
+        return "CourseModel{" +
+                "id=" + id +
+                ", courseName='" + courseName + '\'' +
+                ", videoUrl='" + videoUrl + '\'' +
+                ", teacherName='" + teacherName + '\'' +
+                ", teacherPhone='" + teacherPhone + '\'' +
+                ", price=" + price +
+                ", rate=" + rate +
+                ", description='" + description + '\'' +
+                ", questionModels=" + questionModels +
+                '}';
+    }
 }

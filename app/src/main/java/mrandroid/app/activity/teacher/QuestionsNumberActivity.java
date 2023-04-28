@@ -5,15 +5,18 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import java.util.Objects;
 
+import mrandroid.app.ViewModel;
 import mrandroid.app.databinding.ActivityQuestionsNumberBinding;
 import mrandroid.app.model.CourseModel;
 import mrandroid.app.util.Constants;
 
 public class QuestionsNumberActivity extends AppCompatActivity {
 
+    private ViewModel viewModel;
     private ActivityQuestionsNumberBinding binding;
 
     @Override
@@ -22,11 +25,15 @@ public class QuestionsNumberActivity extends AppCompatActivity {
         binding = ActivityQuestionsNumberBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        viewModel = new ViewModelProvider(this).get(ViewModel.class);
         CourseModel courseModel= (CourseModel) getIntent().getSerializableExtra(Constants.COURSE_MODEL);
 
         binding.btnSubmit.setOnClickListener(view -> validateAndSubmit(courseModel));
 
-        binding.btnSkip.setOnClickListener(view -> finish());
+        binding.btnSkip.setOnClickListener(view -> {
+            viewModel.insertCourse(courseModel);
+            finish();
+        });
     }
 
     private void validateAndSubmit(CourseModel courseModel) {
@@ -42,6 +49,7 @@ public class QuestionsNumberActivity extends AppCompatActivity {
         Intent intent = new Intent(getBaseContext(), AddExamActivity.class);
         intent.putExtra(Constants.COURSE_MODEL, courseModel);
         intent.putExtra(Constants.QUESTIONS_NUMBER, Integer.parseInt(questionNumber));
+        intent.putExtra(Constants.IS_INSERTION, true);
         startActivity(intent);
         finish();
     }

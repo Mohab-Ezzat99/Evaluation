@@ -2,6 +2,7 @@ package mrandroid.app.activity.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,10 +11,11 @@ import androidx.lifecycle.ViewModelProvider;
 import mrandroid.app.ViewModel;
 import mrandroid.app.activity.teacher.AddCourseActivity;
 import mrandroid.app.adapter.CoursesAdapter;
-import mrandroid.app.adapter.QuestionsAdapter;
 import mrandroid.app.databinding.ActivityHomeBinding;
+import mrandroid.app.model.CourseModel;
+import mrandroid.app.util.Constants;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements CoursesAdapter.OnItemClickListener {
 
     private ViewModel viewModel;
     private ActivityHomeBinding binding;
@@ -26,10 +28,14 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         viewModel = new ViewModelProvider(this).get(ViewModel.class);
+
+        coursesAdapter.setListener(this);
         binding.rvCourses.setAdapter(coursesAdapter);
 
+        if(Constants.IS_TEACHER) binding.fabAdd.setVisibility(View.VISIBLE);
+
         binding.fabAdd.setOnClickListener(view -> {
-            Intent intent =new Intent(getBaseContext(), AddCourseActivity.class);
+            Intent intent = new Intent(getBaseContext(), AddCourseActivity.class);
             startActivity(intent);
         });
 
@@ -41,5 +47,12 @@ public class HomeActivity extends AppCompatActivity {
             coursesAdapter.setList(courseModels);
             coursesAdapter.notifyDataSetChanged();
         });
+    }
+
+    @Override
+    public void onItemClick(CourseModel courseModel) {
+        Intent intent = new Intent(this, CourseDetailsActivity.class);
+        intent.putExtra(Constants.COURSE_MODEL, courseModel);
+        startActivity(intent);
     }
 }

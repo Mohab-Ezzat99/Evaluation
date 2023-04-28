@@ -36,6 +36,10 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.Medicine
         holder.tvTeacherName.setText(item.getTeacherName());
         holder.tvDescription.setText(item.getDescription());
         holder.ratingBar.setRating(item.getRate());
+
+        holder.itemView.setOnClickListener(view -> {
+            listener.onItemClick(item);
+        });
     }
 
     @Override
@@ -71,6 +75,6 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.Medicine
     }
 
     public interface OnItemClickListener {
-        void onItemClick(CourseModel medicineModel);
+        void onItemClick(CourseModel courseModel);
     }
 }
