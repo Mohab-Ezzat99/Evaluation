@@ -10,7 +10,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/itl_question"
         style="@style/TextInputLayoutStyle"
-        android:layout_width="@dimen/_270sdp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Question"
         android:textColorHint="@color/gray"

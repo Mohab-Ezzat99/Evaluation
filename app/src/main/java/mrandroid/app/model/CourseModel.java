@@ -3,28 +3,30 @@ package mrandroid.app.model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity
-public class CourseModel {
+public class CourseModel implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String courseName;
+    private String videoUrl;
     private String teacherName;
     private String teacherPhone;
-    private String videoUrl;
-    private String description;
     private float price;
     private float rate;
+    private String description;
     private QuestionModel questionModel;
 
-    public CourseModel(String courseName, String teacherName, String teacherPhone, String videoUrl, String description, float price, float rate, QuestionModel questionModel) {
+    public CourseModel(String courseName, String videoUrl, String teacherName, String teacherPhone, float price, float rate, String description, QuestionModel questionModel) {
         this.courseName = courseName;
+        this.videoUrl = videoUrl;
         this.teacherName = teacherName;
         this.teacherPhone = teacherPhone;
-        this.videoUrl = videoUrl;
-        this.description = description;
         this.price = price;
         this.rate = rate;
+        this.description = description;
         this.questionModel = questionModel;
     }
 
@@ -44,6 +46,14 @@ public class CourseModel {
         this.courseName = courseName;
     }
 
+    public String getVideoUrl() {
+        return videoUrl;
+    }
+
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
+    }
+
     public String getTeacherName() {
         return teacherName;
     }
@@ -60,22 +70,6 @@ public class CourseModel {
         this.teacherPhone = teacherPhone;
     }
 
-    public String getVideoUrl() {
-        return videoUrl;
-    }
-
-    public void setVideoUrl(String videoUrl) {
-        this.videoUrl = videoUrl;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public float getPrice() {
         return price;
     }
@@ -90,6 +84,14 @@ public class CourseModel {
 
     public void setRate(float rate) {
         this.rate = rate;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public QuestionModel getQuestionModel() {

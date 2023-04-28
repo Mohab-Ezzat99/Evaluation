@@ -5,9 +5,9 @@ public class QuestionModel {
     private String question;
     private String option1;
     private String option2;
-    private boolean isOption1Correct;
+    private int isOption1Correct;
 
-    public QuestionModel(String question, String option1, String option2, boolean isOption1Correct) {
+    public QuestionModel(String question, String option1, String option2, int isOption1Correct) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
@@ -38,11 +38,19 @@ public class QuestionModel {
         this.option2 = option2;
     }
 
-    public boolean isOption1Correct() {
+    public int isOption1Correct() {
         return isOption1Correct;
     }
 
-    public void setOption1Correct(boolean option1Correct) {
+    public void setOption1Correct(int option1Correct) {
         isOption1Correct = option1Correct;
+    }
+
+    public boolean isFieldsEmpty() {
+        return question.isEmpty() || option1.isEmpty() || option2.isEmpty();
+    }
+
+    public boolean isAnswerRequired() {
+        return (isOption1Correct == -1);
     }
 }
