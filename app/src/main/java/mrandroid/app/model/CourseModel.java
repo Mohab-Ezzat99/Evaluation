@@ -10,20 +10,22 @@ public class CourseModel {
     private int id;
     private String courseName;
     private String teacherName;
+    private String teacherPhone;
     private String videoUrl;
     private String description;
     private float price;
     private float rate;
-    private boolean hasExam;
+    private ExamModel examModel;
 
-    public CourseModel(String courseName, String teacherName, String videoUrl, String description, float price, float rate, boolean hasExam) {
+    public CourseModel(String courseName, String teacherName, String teacherPhone, String videoUrl, String description, float price, float rate, ExamModel examModel) {
         this.courseName = courseName;
         this.teacherName = teacherName;
+        this.teacherPhone = teacherPhone;
         this.videoUrl = videoUrl;
         this.description = description;
         this.price = price;
         this.rate = rate;
-        this.hasExam = hasExam;
+        this.examModel = examModel;
     }
 
     public int getId() {
@@ -48,6 +50,14 @@ public class CourseModel {
 
     public void setTeacherName(String teacherName) {
         this.teacherName = teacherName;
+    }
+
+    public String getTeacherPhone() {
+        return teacherPhone;
+    }
+
+    public void setTeacherPhone(String teacherPhone) {
+        this.teacherPhone = teacherPhone;
     }
 
     public String getVideoUrl() {
@@ -82,11 +92,11 @@ public class CourseModel {
         this.rate = rate;
     }
 
-    public boolean isHasExam() {
-        return hasExam;
+    public ExamModel getExamModel() {
+        return examModel;
     }
 
-    public void setHasExam(boolean hasExam) {
-        this.hasExam = hasExam;
+    public void setExamModel(ExamModel examModel) {
+        this.examModel = examModel;
     }
 }

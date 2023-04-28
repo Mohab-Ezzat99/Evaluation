@@ -77,4 +77,7 @@ dependencies {
     // LiveData
     //noinspection GradleDependency
     implementation 'androidx.lifecycle:lifecycle-livedata:2.3.1'
+
+    // youtube
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
 }
