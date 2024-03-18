@@ -22,7 +22,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.main.CourseDetailsActivity"
+            android:name=".activity.student.CourseDetailsActivity"
             android:exported="false"
             android:label="Course Details">
             <meta-data
@@ -75,7 +75,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.main.HomeActivity"
+            android:name=".activity.student.StudentActivity"
             android:exported="true"
             android:label="Home"
             android:windowSoftInputMode="adjustResize">

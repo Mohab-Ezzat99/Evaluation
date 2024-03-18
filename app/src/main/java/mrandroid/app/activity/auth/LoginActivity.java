@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 import mrandroid.app.R;
-import mrandroid.app.activity.main.HomeActivity;
+import mrandroid.app.activity.student.StudentActivity;
 import mrandroid.app.databinding.ActivityLoginBinding;
 import mrandroid.app.util.Constants;
 import mrandroid.app.util.LoadingDialog;
@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         Constants.IS_TEACHER =
                                 (binding.radioGroup.getCheckedRadioButtonId() == R.id.rbTeacher);
-                        startActivity(new Intent(getBaseContext(), HomeActivity.class));
+                        startActivity(new Intent(getBaseContext(), StudentActivity.class));
                         finish();
                     } else {
                         loadingDialog.dismiss();
