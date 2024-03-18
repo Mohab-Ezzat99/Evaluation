@@ -3,16 +3,12 @@ package mrandroid.app.activity.doctor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import mrandroid.app.R;
 import mrandroid.app.databinding.ActivityAddQuestionBinding;
 import mrandroid.app.model.AnswerModel;
-import mrandroid.app.util.FirebaseQuestions;
 import mrandroid.app.util.LoadingDialog;
 
 public class AddQuestionActivity extends AppCompatActivity {
@@ -20,7 +16,6 @@ public class AddQuestionActivity extends AppCompatActivity {
     private ActivityAddQuestionBinding binding;
     private boolean is4Options = true;
     private LoadingDialog loadingDialog;
-    private FirebaseQuestions firebaseQuestions;
     private AnswerModel option1;
     private AnswerModel option2;
     private AnswerModel option3;
@@ -33,7 +28,6 @@ public class AddQuestionActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         loadingDialog = new LoadingDialog(this);
-        firebaseQuestions = new FirebaseQuestions(this);
         option1 = new AnswerModel("", false);
         option2 = new AnswerModel("", false);
         option3 = new AnswerModel("", false);
@@ -133,7 +127,10 @@ public class AddQuestionActivity extends AppCompatActivity {
         DatabaseReference questionRef = FirebaseDatabase.getInstance().getReference().child("questions").child(question);
         questionRef.push().setValue(option1)
                 .addOnSuccessListener(aVoid -> createAnswer2())
-                .addOnFailureListener(e -> Toast.makeText(getBaseContext(), "Error adding answer: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                .addOnFailureListener(e -> {
+                    loadingDialog.dismiss();
+                    Toast.makeText(getBaseContext(), "Error adding answer: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void createAnswer2() {
@@ -151,7 +148,10 @@ public class AddQuestionActivity extends AppCompatActivity {
                         finish();
                     }
                 })
-                .addOnFailureListener(e -> Toast.makeText(getBaseContext(), "Error adding answer: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                .addOnFailureListener(e -> {
+                    loadingDialog.dismiss();
+                    Toast.makeText(getBaseContext(), "Error adding answer: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void createAnswer3() {
@@ -162,7 +162,10 @@ public class AddQuestionActivity extends AppCompatActivity {
         DatabaseReference questionRef = FirebaseDatabase.getInstance().getReference().child("questions").child(question);
         questionRef.push().setValue(option3)
                 .addOnSuccessListener(aVoid -> createAnswer4())
-                .addOnFailureListener(e -> Toast.makeText(getBaseContext(), "Error adding answer: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                .addOnFailureListener(e -> {
+                    loadingDialog.dismiss();
+                    Toast.makeText(getBaseContext(), "Error adding answer: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
     }
 
     private void createAnswer4() {
@@ -177,7 +180,10 @@ public class AddQuestionActivity extends AppCompatActivity {
                     Toast.makeText(getBaseContext(), "Question created successfully", Toast.LENGTH_SHORT).show();
                     finish();
                 })
-                .addOnFailureListener(e -> Toast.makeText(getBaseContext(), "Error adding answer: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                .addOnFailureListener(e -> {
+                    loadingDialog.dismiss();
+                    Toast.makeText(getBaseContext(), "Error adding answer: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
     }
 
 }
