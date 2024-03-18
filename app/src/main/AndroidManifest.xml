@@ -14,38 +14,6 @@
         android:theme="@style/Theme.Attendance"
         tools:targetApi="31">
         <activity
-            android:name=".activity.teacher.QuestionsNumberActivity"
-            android:exported="false"
-            android:label="Add Exam">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".activity.student.CourseDetailsActivity"
-            android:exported="false"
-            android:label="Course Details">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".activity.teacher.AddExamActivity"
-            android:exported="false"
-            android:label="Questions">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".activity.teacher.AddCourseActivity"
-            android:exported="false"
-            android:label="Add Course">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".activity.auth.SignupActivity"
             android:exported="false"
             android:label="Signup"
@@ -78,9 +46,17 @@
             android:name=".activity.student.StudentActivity"
             android:exported="true"
             android:label="Home"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".activity.doctor.DoctorActivity"
+            android:exported="true"
+            android:label="Home"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".activity.doctor.AddQuestionActivity"
+            android:exported="true"
+            android:label="Add Question"
+            android:windowSoftInputMode="adjustResize"/>
     </application>
 
 </manifest>

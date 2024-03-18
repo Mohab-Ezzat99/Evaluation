@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 import mrandroid.app.R;
+import mrandroid.app.activity.doctor.DoctorActivity;
 import mrandroid.app.activity.student.StudentActivity;
 import mrandroid.app.databinding.ActivityLoginBinding;
 import mrandroid.app.util.Constants;
@@ -62,9 +63,11 @@ public class LoginActivity extends AppCompatActivity {
                         loadingDialog.dismiss();
                         Toast.makeText(getBaseContext(), "Welcome! Login Successfully", Toast.LENGTH_LONG).show();
 
-                        Constants.IS_TEACHER =
-                                (binding.radioGroup.getCheckedRadioButtonId() == R.id.rbTeacher);
-                        startActivity(new Intent(getBaseContext(), StudentActivity.class));
+                        Constants.IS_Doctor =
+                                (binding.radioGroup.getCheckedRadioButtonId() == R.id.rbDoctor);
+
+                        if (Constants.IS_Doctor) startActivity(new Intent(getBaseContext(), DoctorActivity.class));
+                        else startActivity(new Intent(getBaseContext(), StudentActivity.class));
                         finish();
                     } else {
                         loadingDialog.dismiss();
