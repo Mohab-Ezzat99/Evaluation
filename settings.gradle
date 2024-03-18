@@ -9,5 +9,5 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name = "Courses"
+rootProject.name = "Evaluation"
 include ':app'
