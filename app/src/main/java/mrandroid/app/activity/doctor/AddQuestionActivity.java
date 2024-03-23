@@ -9,6 +9,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import mrandroid.app.R;
 import mrandroid.app.databinding.ActivityAddQuestionBinding;
 import mrandroid.app.model.AnswerModel;
+import mrandroid.app.model.QuestionModel;
 import mrandroid.app.util.LoadingDialog;
 
 public class AddQuestionActivity extends AppCompatActivity {
@@ -66,7 +67,7 @@ public class AddQuestionActivity extends AppCompatActivity {
 
         binding.fabSubmit.setOnClickListener(view -> {
             boolean isValid = validateQuestion();
-            if (isValid) createAnswer1();
+            if (isValid) createQuestion();
         });
 
     }
@@ -117,6 +118,22 @@ public class AddQuestionActivity extends AppCompatActivity {
         return true;
     }
 
+    private void createQuestion() {
+        loadingDialog.display();
+
+        String question = binding.etQuestion.getText().toString().trim();
+        boolean isCode = binding.cbCode.isChecked();
+        QuestionModel questionModel = new QuestionModel(question,isCode);
+
+        DatabaseReference questionRef = FirebaseDatabase.getInstance().getReference().child("questions").child(question);
+        questionRef.setValue(questionModel)
+                .addOnSuccessListener(aVoid -> createAnswer1())
+                .addOnFailureListener(e -> {
+                    loadingDialog.dismiss();
+                    Toast.makeText(getBaseContext(), "Error adding answer: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
+    }
+
     private void createAnswer1() {
         loadingDialog.display();
 
@@ -124,8 +141,8 @@ public class AddQuestionActivity extends AppCompatActivity {
         String option1Text = binding.etOption1.getText().toString().trim();
         option1.setAnswer(option1Text);
 
-        DatabaseReference questionRef = FirebaseDatabase.getInstance().getReference().child("questions").child(question);
-        questionRef.push().setValue(option1)
+        DatabaseReference answerRef = FirebaseDatabase.getInstance().getReference().child("questions").child(question).child("answer");
+        answerRef.push().setValue(option1)
                 .addOnSuccessListener(aVoid -> createAnswer2())
                 .addOnFailureListener(e -> {
                     loadingDialog.dismiss();
@@ -138,8 +155,8 @@ public class AddQuestionActivity extends AppCompatActivity {
         String option2Text = binding.etOption2.getText().toString().trim();
         option2.setAnswer(option2Text);
 
-        DatabaseReference questionRef = FirebaseDatabase.getInstance().getReference().child("questions").child(question);
-        questionRef.push().setValue(option2)
+        DatabaseReference answerRef = FirebaseDatabase.getInstance().getReference().child("questions").child(question).child("answer");
+        answerRef.push().setValue(option2)
                 .addOnSuccessListener(aVoid -> {
                     if (is4Options) createAnswer3();
                     else {
@@ -159,8 +176,8 @@ public class AddQuestionActivity extends AppCompatActivity {
         String option3Text = binding.etOption3.getText().toString().trim();
         option3.setAnswer(option3Text);
 
-        DatabaseReference questionRef = FirebaseDatabase.getInstance().getReference().child("questions").child(question);
-        questionRef.push().setValue(option3)
+        DatabaseReference answerRef = FirebaseDatabase.getInstance().getReference().child("questions").child(question).child("answer");
+        answerRef.push().setValue(option3)
                 .addOnSuccessListener(aVoid -> createAnswer4())
                 .addOnFailureListener(e -> {
                     loadingDialog.dismiss();
@@ -173,8 +190,8 @@ public class AddQuestionActivity extends AppCompatActivity {
         String option4Text = binding.etOption4.getText().toString().trim();
         option4.setAnswer(option4Text);
 
-        DatabaseReference questionRef = FirebaseDatabase.getInstance().getReference().child("questions").child(question);
-        questionRef.push().setValue(option4)
+        DatabaseReference answerRef = FirebaseDatabase.getInstance().getReference().child("questions").child(question).child("answer");
+        answerRef.push().setValue(option4)
                 .addOnSuccessListener(aVoid -> {
                     loadingDialog.dismiss();
                     Toast.makeText(getBaseContext(), "Question created successfully", Toast.LENGTH_SHORT).show();

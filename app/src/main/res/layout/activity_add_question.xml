@@ -46,7 +46,7 @@
         android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgOptionsNum">
+        app:layout_constraintTop_toBottomOf="@+id/cb_code">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_question"
@@ -55,6 +55,15 @@
             android:inputType="textMultiLine"
             android:textColor="?attr/colorOnSecondary" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/cb_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:text="Is the question has code?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgOptionsNum" />
 
     <RadioGroup
         android:id="@+id/rgOptionsAnswer"

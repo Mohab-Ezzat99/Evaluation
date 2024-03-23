@@ -39,17 +39,13 @@ public class DoctorActivity extends AppCompatActivity implements QuestionsAdapte
         binding.fabAdd.setOnClickListener(view -> {
             startActivity(new Intent(getBaseContext(), AddQuestionActivity.class));
         });
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
         getAllQuestions();
     }
 
     private void getAllQuestions() {
         loadingDialog.display();
-        FirebaseDatabase.getInstance().getReference().child("questions").addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference().child("questions").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 loadingDialog.dismiss();
@@ -80,7 +76,6 @@ public class DoctorActivity extends AppCompatActivity implements QuestionsAdapte
                 .addOnSuccessListener(aVoid -> {
                     loadingDialog.dismiss();
                     Toast.makeText(getBaseContext(), "Question deleted successfully", Toast.LENGTH_SHORT).show();
-                    getAllQuestions();
                 })
                 .addOnFailureListener(e -> {
                     loadingDialog.dismiss();
