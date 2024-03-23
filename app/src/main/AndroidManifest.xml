@@ -42,18 +42,18 @@
             android:name=".activity.student.StudentActivity"
             android:exported="true"
             android:label="Home"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".activity.doctor.DoctorActivity"
-            android:exported="true"
-            android:label="Home"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.doctor.DoctorActivity"
+            android:exported="true"
+            android:label="Home"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.doctor.AddQuestionActivity"
             android:exported="true"

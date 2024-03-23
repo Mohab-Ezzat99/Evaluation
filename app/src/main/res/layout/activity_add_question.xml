@@ -36,6 +36,15 @@
             android:text="4 Options" />
     </RadioGroup>
 
+    <CheckBox
+        android:id="@+id/cb_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:text="Is the question has code?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgOptionsNum" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/itl_question"
         style="@style/TextInputLayoutStyle"
@@ -55,15 +64,6 @@
             android:inputType="textMultiLine"
             android:textColor="?attr/colorOnSecondary" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <CheckBox
-        android:id="@+id/cb_code"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_8sdp"
-        android:text="Is the question has code?"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgOptionsNum" />
 
     <RadioGroup
         android:id="@+id/rgOptionsAnswer"
