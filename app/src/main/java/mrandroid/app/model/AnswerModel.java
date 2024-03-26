@@ -5,6 +5,10 @@ public class AnswerModel {
     private String answer;
     private boolean isCorrect;
 
+    public AnswerModel() {
+
+    }
+
     public AnswerModel(String answer, boolean isCorrect) {
         this.answer = answer;
         this.isCorrect = isCorrect;

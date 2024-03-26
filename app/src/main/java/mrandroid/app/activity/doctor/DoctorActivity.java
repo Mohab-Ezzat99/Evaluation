@@ -15,6 +15,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import mrandroid.app.activity.student.StudentActivity;
 import mrandroid.app.adapter.QuestionsAdapter;
 import mrandroid.app.databinding.ActivityDoctorBinding;
 import mrandroid.app.util.LoadingDialog;
@@ -35,6 +36,10 @@ public class DoctorActivity extends AppCompatActivity implements QuestionsAdapte
         adapter = new QuestionsAdapter();
         adapter.setListener(this);
         binding.rvQuestions.setAdapter(adapter);
+
+        binding.fabStudent.setOnClickListener(view -> {
+            startActivity(new Intent(getBaseContext(), StudentActivity.class));
+        });
 
         binding.fabAdd.setOnClickListener(view -> {
             startActivity(new Intent(getBaseContext(), AddQuestionActivity.class));
