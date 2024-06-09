@@ -29,21 +29,25 @@ public class TalentActivity extends AppCompatActivity {
         binding.tvProgramming.setOnClickListener(view -> {
             CurrentTalent.name = TalentNames.PROGRAMING.getName();
             startActivity(new Intent(getBaseContext(), LevelActivity.class));
+            finish();
         });
 
         binding.tvPhotoshop.setOnClickListener(view -> {
             CurrentTalent.name = TalentNames.PHOTOSHOP.getName();
             startActivity(new Intent(getBaseContext(), LevelActivity.class));
+            finish();
         });
 
         binding.tvAnimation.setOnClickListener(view -> {
             CurrentTalent.name = TalentNames.ANIMATION.getName();
             startActivity(new Intent(getBaseContext(), LevelActivity.class));
+            finish();
         });
 
         binding.tvEdit.setOnClickListener(view -> {
             CurrentTalent.name = TalentNames.EDIT.getName();
             startActivity(new Intent(getBaseContext(), LevelActivity.class));
+            finish();
         });
 
     }

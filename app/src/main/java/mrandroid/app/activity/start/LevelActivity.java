@@ -23,16 +23,19 @@ public class LevelActivity extends AppCompatActivity {
         binding.tvLow.setOnClickListener(view -> {
             CurrentTalent.level = TalentLevel.LOW.getName();
             startActivity(new Intent(getBaseContext(), HomeActivity.class));
+            finish();
         });
 
         binding.tvNormal.setOnClickListener(view -> {
             CurrentTalent.level = TalentLevel.NORMAL.getName();
             startActivity(new Intent(getBaseContext(), HomeActivity.class));
+            finish();
         });
 
         binding.tvHigh.setOnClickListener(view -> {
             CurrentTalent.level = TalentLevel.HIGH.getName();
             startActivity(new Intent(getBaseContext(), HomeActivity.class));
+            finish();
         });
 
     }

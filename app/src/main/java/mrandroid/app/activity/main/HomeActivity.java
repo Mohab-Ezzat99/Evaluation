@@ -5,14 +5,18 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import mrandroid.app.R;
 import mrandroid.app.activity.start.TalentActivity;
 import mrandroid.app.databinding.ActivityHomeBinding;
@@ -39,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         loadingDialog = new LoadingDialog(this);
-        if(Constants.IS_Doctor) binding.fabAdd.setVisibility(View.VISIBLE);
+        if (Constants.IS_Doctor) binding.fabAdd.setVisibility(View.VISIBLE);
 
         binding.tvOpenCode.setOnClickListener(v -> {
             String url = "https://www.online-python.com";
@@ -100,6 +104,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 loadingDialog.dismiss();
                 questionList.clear();
+                correctAnswers = 0;
 
                 for (DataSnapshot questionSnapshot : snapshot.getChildren()) {
                     questionList.add(questionSnapshot.getValue(QuestionModel.class));
