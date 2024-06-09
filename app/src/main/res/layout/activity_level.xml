@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/studentRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layoutDirection="rtl"
+    android:orientation="vertical"
+    android:padding="@dimen/_8sdp">
+
+    <TextView
+        android:id="@+id/tvLow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_4sdp"
+        android:background="@color/white"
+        android:elevation="@dimen/_2sdp"
+        android:gravity="center"
+        android:padding="@dimen/_24sdp"
+        android:text="مبتدئ"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20ssp" />
+
+    <TextView
+        android:id="@+id/tvNormal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_4sdp"
+        android:background="@color/white"
+        android:elevation="@dimen/_2sdp"
+        android:gravity="center"
+        android:padding="@dimen/_24sdp"
+        android:text="متوسط"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20ssp" />
+
+    <TextView
+        android:id="@+id/tvHigh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_4sdp"
+        android:background="@color/white"
+        android:elevation="@dimen/_2sdp"
+        android:gravity="center"
+        android:padding="@dimen/_24sdp"
+        android:text="محترف"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20ssp" />
+
+</LinearLayout>

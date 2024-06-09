@@ -26,8 +26,8 @@ public class SplashActivity extends AppCompatActivity {
         binding.tvDesc.setAnimation(anim_left);
 
         new Handler().postDelayed(() -> {
-            startActivity(new Intent(getBaseContext(), LoginActivity.class));
+            startActivity(new Intent(getBaseContext(), IntroActivity.class));
             finish();
-        }, 1800);
+        }, 2000);
     }
 }

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/studentRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layoutDirection="rtl"
+    android:orientation="vertical"
+    android:padding="@dimen/_8sdp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvProgramming"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:elevation="@dimen/_2sdp"
+            android:gravity="center"
+            android:padding="@dimen/_24sdp"
+            android:text="برمجة"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20ssp" />
+
+        <TextView
+            android:id="@+id/tvPhotoshop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:elevation="@dimen/_2sdp"
+            android:gravity="center"
+            android:padding="@dimen/_24sdp"
+            android:text="فوتوشوب"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20ssp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/tvAnimation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:elevation="@dimen/_2sdp"
+            android:gravity="center"
+            android:padding="@dimen/_24sdp"
+            android:text="انميشن"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20ssp" />
+
+        <TextView
+            android:id="@+id/tvEdit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:elevation="@dimen/_2sdp"
+            android:gravity="center"
+            android:padding="@dimen/_24sdp"
+            android:text="مونتاج"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20ssp" />
+
+    </LinearLayout>
+
+</LinearLayout>
