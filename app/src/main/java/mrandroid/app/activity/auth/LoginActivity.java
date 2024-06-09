@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
+
+import mrandroid.app.R;
 import mrandroid.app.activity.start.TalentActivity;
 import mrandroid.app.databinding.ActivityLoginBinding;
+import mrandroid.app.util.Constants;
 import mrandroid.app.util.LoadingDialog;
 
 public class LoginActivity extends AppCompatActivity {
@@ -56,6 +59,9 @@ public class LoginActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         loadingDialog.dismiss();
                         Toast.makeText(getBaseContext(), "Welcome! Login Successfully", Toast.LENGTH_LONG).show();
+
+                        Constants.IS_Doctor =
+                                (binding.radioGroup.getCheckedRadioButtonId() == R.id.rbDoctor);
 
                         startActivity(new Intent(getBaseContext(), TalentActivity.class));
                         finish();

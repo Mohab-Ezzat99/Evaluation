@@ -14,14 +14,18 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 import mrandroid.app.R;
+import mrandroid.app.activity.start.TalentActivity;
 import mrandroid.app.databinding.ActivityHomeBinding;
 import mrandroid.app.model.QuestionModel;
+import mrandroid.app.util.Constants;
 import mrandroid.app.util.LoadingDialog;
+import mrandroid.app.util.talent.CurrentTalent;
 
 public class HomeActivity extends AppCompatActivity {
 
     private ActivityHomeBinding binding;
     private LoadingDialog loadingDialog;
+    private String questionRoot = CurrentTalent.name + "/" + CurrentTalent.level;
     private List<QuestionModel> questionList = new ArrayList<>();
     private boolean hasSelectAnswer = false;
     private int questionPosition = -1;
@@ -35,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         loadingDialog = new LoadingDialog(this);
+        if(Constants.IS_Doctor) binding.fabAdd.setVisibility(View.VISIBLE);
 
         binding.tvOpenCode.setOnClickListener(v -> {
             String url = "https://www.online-python.com";
@@ -81,20 +86,26 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        binding.fabAdd.setOnClickListener(v -> {
+            startActivity(new Intent(getBaseContext(), AddQuestionActivity.class));
+        });
+
         getAllQuestions();
     }
 
     private void getAllQuestions() {
         loadingDialog.display();
-        FirebaseDatabase.getInstance().getReference().child("questions").addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference().child(questionRoot).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 loadingDialog.dismiss();
+                questionList.clear();
+
                 for (DataSnapshot questionSnapshot : snapshot.getChildren()) {
                     questionList.add(questionSnapshot.getValue(QuestionModel.class));
                 }
                 if (!questionList.isEmpty()) {
-                    binding.studentRoot.setVisibility(View.VISIBLE);
+                    binding.mainRoot.setVisibility(View.VISIBLE);
                     questionPosition = 0;
                     setCurrentQuestion();
                 }

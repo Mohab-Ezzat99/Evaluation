@@ -50,9 +50,13 @@
         <activity
             android:name=".activity.start.TalentActivity"
             android:exported="true"
-            android:label="Intro"/>
+            android:label="Talent"/>
         <activity
             android:name=".activity.start.LevelActivity"
+            android:exported="true"
+            android:label="Level" />
+        <activity
+            android:name=".activity.main.AddQuestionActivity"
             android:exported="true"
             android:label="Intro" />
         <activity
