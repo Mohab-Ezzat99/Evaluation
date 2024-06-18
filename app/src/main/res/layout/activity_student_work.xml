@@ -19,13 +19,12 @@
         app:srcCompat="@drawable/pic_evaluation" />
 
     <TextView
-        android:id="@+id/tvDriveLink"
+        android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_8sdp"
         android:gravity="center"
-        android:padding="@dimen/_12sdp"
-        android:text="Congratulations! You finished the exam."
+        android:text="Enter your Google Drive link!."
         android:textColor="?attr/colorOnSecondary"
         android:textSize="@dimen/_14ssp"
         android:textStyle="bold"
@@ -33,31 +32,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
 
-    <TextView
-        android:id="@+id/tv_result"
-        android:layout_width="0dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/itl_drive"
+        style="@style/TextInputLayoutStyle"
+        android:layout_width="@dimen/_270sdp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_8sdp"
-        android:gravity="center"
-        android:text="Score: 1 / 3"
-        android:textColor="?attr/colorOnSecondary"
-        android:textSize="@dimen/_16ssp"
-        android:textStyle="bold"
+        android:hint="Drive work"
+        android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDriveLink" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_drive"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:textColor="?attr/colorOnSecondary" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_reTakeExam"
+        android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_16sdp"
-        android:text="Retake the exam"
         android:background="@drawable/shape_purple"
         android:padding="@dimen/_12sdp"
+        android:text="Submit"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_result" />
+        app:layout_constraintTop_toBottomOf="@+id/itl_drive" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
