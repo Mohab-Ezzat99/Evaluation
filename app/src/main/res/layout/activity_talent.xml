@@ -4,6 +4,7 @@
     android:id="@+id/studentRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pic_background"
     android:gravity="center"
     android:layoutDirection="rtl"
     android:orientation="vertical"
@@ -23,26 +24,26 @@
             android:layout_height="match_parent"
             android:layout_margin="@dimen/_4sdp"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="@drawable/shape_purple"
             android:elevation="@dimen/_2sdp"
             android:gravity="center"
             android:padding="@dimen/_24sdp"
             android:text="برمجة"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/_20ssp" />
 
         <TextView
-            android:id="@+id/tvPhotoshop"
+            android:id="@+id/tvGraphic"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/_4sdp"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="@drawable/shape_purple"
             android:elevation="@dimen/_2sdp"
             android:gravity="center"
             android:padding="@dimen/_24sdp"
-            android:text="فوتوشوب"
-            android:textColor="@color/black"
+            android:text="جرافيك"
+            android:textColor="@color/white"
             android:textSize="@dimen/_20ssp" />
 
     </LinearLayout>
@@ -62,12 +63,12 @@
             android:layout_height="match_parent"
             android:layout_margin="@dimen/_4sdp"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="@drawable/shape_purple"
             android:elevation="@dimen/_2sdp"
             android:gravity="center"
             android:padding="@dimen/_24sdp"
             android:text="انميشن"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/_20ssp" />
 
         <TextView
@@ -76,12 +77,12 @@
             android:layout_height="match_parent"
             android:layout_margin="@dimen/_4sdp"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="@drawable/shape_purple"
             android:elevation="@dimen/_2sdp"
             android:gravity="center"
             android:padding="@dimen/_24sdp"
             android:text="مونتاج"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/_20ssp" />
 
     </LinearLayout>

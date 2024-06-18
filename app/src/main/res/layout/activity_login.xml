@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
+    android:background="@drawable/pic_background"
     android:scrollbars="none">
 
     <androidx.constraintlayout.widget.ConstraintLayout

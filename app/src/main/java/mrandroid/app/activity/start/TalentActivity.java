@@ -32,7 +32,7 @@ public class TalentActivity extends AppCompatActivity {
             finish();
         });
 
-        binding.tvPhotoshop.setOnClickListener(view -> {
+        binding.tvGraphic.setOnClickListener(view -> {
             CurrentTalent.name = TalentNames.PHOTOSHOP.getName();
             startActivity(new Intent(getBaseContext(), LevelActivity.class));
             finish();
