@@ -17,15 +17,14 @@ import mrandroid.app.databinding.ActivityAddQuestionBinding;
 import mrandroid.app.model.AnswerModel;
 import mrandroid.app.model.QuestionModel;
 import mrandroid.app.util.LoadingDialog;
-import mrandroid.app.util.talent.CurrentTalent;
-import mrandroid.app.util.talent.TalentNames;
+import mrandroid.app.util.CurrentTalent;
 
 public class AddQuestionActivity extends AppCompatActivity {
 
     private ActivityAddQuestionBinding binding;
     private boolean is4Options = true;
     private LoadingDialog loadingDialog;
-    private String questionRoot = CurrentTalent.name + "/" + CurrentTalent.level;
+    private String questionRoot = CurrentTalent.talentLabel + "/" + CurrentTalent.track;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

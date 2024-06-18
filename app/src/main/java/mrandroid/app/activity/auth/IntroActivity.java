@@ -1,22 +1,14 @@
 package mrandroid.app.activity.auth;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import mrandroid.app.R;
-import mrandroid.app.activity.main.HomeActivity;
 import mrandroid.app.databinding.ActivityIntroBinding;
-import mrandroid.app.databinding.ActivitySplashBinding;
-import mrandroid.app.util.talent.CurrentTalent;
-import mrandroid.app.util.talent.TalentLevel;
 
 public class IntroActivity extends AppCompatActivity {
 

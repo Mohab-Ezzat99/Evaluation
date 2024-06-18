@@ -52,9 +52,9 @@
             android:exported="true"
             android:label="Talent"/>
         <activity
-            android:name=".activity.start.LevelActivity"
+            android:name=".activity.start.TrackActivity"
             android:exported="true"
-            android:label="Level" />
+            android:label="Track" />
         <activity
             android:name=".activity.main.AddQuestionActivity"
             android:exported="true"

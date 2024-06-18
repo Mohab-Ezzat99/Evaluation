@@ -11,7 +11,7 @@
     android:padding="@dimen/_8sdp">
 
     <TextView
-        android:id="@+id/tvLow"
+        android:id="@+id/tvTrackOne"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_4sdp"
@@ -19,12 +19,11 @@
         android:elevation="@dimen/_2sdp"
         android:gravity="center"
         android:padding="@dimen/_24sdp"
-        android:text="مبتدئ"
         android:textColor="@color/white"
         android:textSize="@dimen/_20ssp" />
 
     <TextView
-        android:id="@+id/tvNormal"
+        android:id="@+id/tvTrackTwo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_4sdp"
@@ -32,12 +31,11 @@
         android:elevation="@dimen/_2sdp"
         android:gravity="center"
         android:padding="@dimen/_24sdp"
-        android:text="متوسط"
         android:textColor="@color/white"
         android:textSize="@dimen/_20ssp" />
 
     <TextView
-        android:id="@+id/tvHigh"
+        android:id="@+id/tvTrackThree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_4sdp"
@@ -45,7 +43,6 @@
         android:elevation="@dimen/_2sdp"
         android:gravity="center"
         android:padding="@dimen/_24sdp"
-        android:text="محترف"
         android:textColor="@color/white"
         android:textSize="@dimen/_20ssp" />
 

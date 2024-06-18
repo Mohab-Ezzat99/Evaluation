@@ -18,18 +18,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mrandroid.app.R;
-import mrandroid.app.activity.start.TalentActivity;
 import mrandroid.app.databinding.ActivityHomeBinding;
 import mrandroid.app.model.QuestionModel;
 import mrandroid.app.util.Constants;
 import mrandroid.app.util.LoadingDialog;
-import mrandroid.app.util.talent.CurrentTalent;
+import mrandroid.app.util.CurrentTalent;
 
 public class HomeActivity extends AppCompatActivity {
 
     private ActivityHomeBinding binding;
     private LoadingDialog loadingDialog;
-    private String questionRoot = CurrentTalent.name + "/" + CurrentTalent.level;
+    private String questionRoot = CurrentTalent.talentLabel + "/" + CurrentTalent.track;
     private List<QuestionModel> questionList = new ArrayList<>();
     private boolean hasSelectAnswer = false;
     private int questionPosition = -1;
