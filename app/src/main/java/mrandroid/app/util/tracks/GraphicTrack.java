@@ -3,8 +3,8 @@ package mrandroid.app.util.tracks;
 public enum GraphicTrack {
 
     LABEL("GraphicTrack"),
-    PHOTOSHOP("HTML"),
-    INDESIGN("PYTHON"),
+    PHOTOSHOP("PHOTOSHOP"),
+    INDESIGN("INDESIGN"),
     ILLUSTRATOR("ILLUSTRATOR");
 
     private String value;
