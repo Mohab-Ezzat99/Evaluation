@@ -1,4 +1,4 @@
-package mrandroid.app.activity.main;
+package mrandroid.app.activity.student;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -18,15 +18,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mrandroid.app.R;
-import mrandroid.app.databinding.ActivityHomeBinding;
+import mrandroid.app.activity.doctor.AddQuestionActivity;
+import mrandroid.app.activity.doctor.ExamResultActivity;
+import mrandroid.app.databinding.ActivityStudentBinding;
 import mrandroid.app.model.QuestionModel;
 import mrandroid.app.util.Constants;
 import mrandroid.app.util.LoadingDialog;
 import mrandroid.app.util.CurrentTalent;
 
-public class HomeActivity extends AppCompatActivity {
+public class StudentActivity extends AppCompatActivity {
 
-    private ActivityHomeBinding binding;
+    private ActivityStudentBinding binding;
     private LoadingDialog loadingDialog;
     private String questionRoot = CurrentTalent.talentLabel + "/" + CurrentTalent.track;
     private List<QuestionModel> questionList = new ArrayList<>();
@@ -38,11 +40,10 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityHomeBinding.inflate(getLayoutInflater());
+        binding = ActivityStudentBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         loadingDialog = new LoadingDialog(this);
-        if (Constants.IS_Doctor) binding.fabAdd.setVisibility(View.VISIBLE);
 
         binding.tvOpenCode.setOnClickListener(v -> {
             String url = "https://www.online-python.com";
@@ -76,21 +77,19 @@ public class HomeActivity extends AppCompatActivity {
 
             if (questionPosition == questionList.size() - 1) {
                 updateAnswerResult();
-
-                Intent intent = new Intent(getBaseContext(), ExamResultActivity.class);
-                intent.putExtra("total", questionList.size());
-                intent.putExtra("score", correctAnswers);
-                startActivity(intent);
+                startActivity(new Intent(getBaseContext(), WorkActivity.class));
                 finish();
+
+//                Intent intent = new Intent(getBaseContext(), ExamResultActivity.class);
+//                intent.putExtra("total", questionList.size());
+//                intent.putExtra("score", correctAnswers);
+//                startActivity(intent);
+//                finish();
             } else {
                 updateAnswerResult();
                 questionPosition++;
                 setCurrentQuestion();
             }
-        });
-
-        binding.fabAdd.setOnClickListener(v -> {
-            startActivity(new Intent(getBaseContext(), AddQuestionActivity.class));
         });
 
         getAllQuestions();
@@ -109,7 +108,7 @@ public class HomeActivity extends AppCompatActivity {
                     questionList.add(questionSnapshot.getValue(QuestionModel.class));
                 }
                 if (!questionList.isEmpty()) {
-                    binding.mainRoot.setVisibility(View.VISIBLE);
+                    binding.getRoot().setVisibility(View.VISIBLE);
                     questionPosition = 0;
                     setCurrentQuestion();
                 }

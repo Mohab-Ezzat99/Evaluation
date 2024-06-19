@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                         loadingDialog.dismiss();
                         Toast.makeText(getBaseContext(), "Welcome! Login Successfully", Toast.LENGTH_LONG).show();
 
-                        Constants.IS_Doctor =
+                        Constants.IS_DOCTOR =
                                 (binding.radioGroup.getCheckedRadioButtonId() == R.id.rbDoctor);
 
                         startActivity(new Intent(getBaseContext(), TalentActivity.class));

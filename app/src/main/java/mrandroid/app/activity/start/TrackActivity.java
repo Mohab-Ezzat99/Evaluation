@@ -2,9 +2,13 @@ package mrandroid.app.activity.start;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
-import mrandroid.app.activity.main.HomeActivity;
+
+import mrandroid.app.activity.doctor.DoctorActivity;
+import mrandroid.app.activity.student.StudentActivity;
 import mrandroid.app.databinding.ActivityTrackBinding;
+import mrandroid.app.util.Constants;
 import mrandroid.app.util.CurrentTalent;
 import mrandroid.app.util.tracks.AnimationTrack;
 import mrandroid.app.util.tracks.EditTrack;
@@ -25,20 +29,29 @@ public class TrackActivity extends AppCompatActivity {
 
         binding.tvTrackOne.setOnClickListener(view -> {
             CurrentTalent.track = binding.tvTrackOne.getText().toString();
-            startActivity(new Intent(getBaseContext(), HomeActivity.class));
-            finish();
+
+            if (Constants.IS_DOCTOR)
+                startActivity(new Intent(getBaseContext(), DoctorActivity.class));
+            else startActivity(new Intent(getBaseContext(), StudentActivity.class));
+            finishAffinity();
         });
 
         binding.tvTrackTwo.setOnClickListener(view -> {
             CurrentTalent.track = binding.tvTrackTwo.getText().toString();
-            startActivity(new Intent(getBaseContext(), HomeActivity.class));
-            finish();
+
+            if (Constants.IS_DOCTOR)
+                startActivity(new Intent(getBaseContext(), DoctorActivity.class));
+            else startActivity(new Intent(getBaseContext(), StudentActivity.class));
+            finishAffinity();
         });
 
         binding.tvTrackThree.setOnClickListener(view -> {
             CurrentTalent.track = binding.tvTrackThree.getText().toString();
-            startActivity(new Intent(getBaseContext(), HomeActivity.class));
-            finish();
+
+            if (Constants.IS_DOCTOR)
+                startActivity(new Intent(getBaseContext(), DoctorActivity.class));
+            else startActivity(new Intent(getBaseContext(), StudentActivity.class));
+            finishAffinity();
         });
 
     }

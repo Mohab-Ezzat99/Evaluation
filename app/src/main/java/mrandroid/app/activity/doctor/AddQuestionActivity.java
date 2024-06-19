@@ -1,4 +1,4 @@
-package mrandroid.app.activity.main;
+package mrandroid.app.activity.doctor;
 
 import android.os.Bundle;
 import android.view.View;

@@ -1,4 +1,4 @@
-package mrandroid.app.activity.main;
+package mrandroid.app.activity.doctor;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,13 +18,5 @@ public class ExamResultActivity extends AppCompatActivity {
         binding = ActivityExamResultBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        int total = getIntent().getIntExtra("total", 0);
-        int score = getIntent().getIntExtra("score", 0);
-        binding.tvResult.setText("Score: " + score + "/" + total);
-
-        binding.btnReTakeExam.setOnClickListener(v -> {
-            startActivity(new Intent(getBaseContext(), TalentActivity.class));
-            finish();
-        });
     }
 }

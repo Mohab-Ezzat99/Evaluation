@@ -23,25 +23,21 @@ public class TalentActivity extends AppCompatActivity {
         binding.tvProgramming.setOnClickListener(view -> {
             CurrentTalent.talentLabel = ProgramingTrack.LABEL.getValue();
             startActivity(new Intent(getBaseContext(), TrackActivity.class));
-            finish();
         });
 
         binding.tvGraphic.setOnClickListener(view -> {
             CurrentTalent.talentLabel = GraphicTrack.LABEL.getValue();
             startActivity(new Intent(getBaseContext(), TrackActivity.class));
-            finish();
         });
 
         binding.tvAnimation.setOnClickListener(view -> {
             CurrentTalent.talentLabel = AnimationTrack.LABEL.getValue();
             startActivity(new Intent(getBaseContext(), TrackActivity.class));
-            finish();
         });
 
         binding.tvEdit.setOnClickListener(view -> {
             CurrentTalent.talentLabel = EditTrack.LABEL.getValue();
             startActivity(new Intent(getBaseContext(), TrackActivity.class));
-            finish();
         });
 
     }

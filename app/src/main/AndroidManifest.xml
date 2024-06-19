@@ -56,22 +56,27 @@
             android:exported="true"
             android:label="Track" />
         <activity
-            android:name=".activity.main.AddQuestionActivity"
+            android:name=".activity.doctor.AddQuestionActivity"
             android:exported="true"
             android:label="Intro" />
         <activity
-            android:name=".activity.main.HomeActivity"
+            android:name=".activity.student.StudentActivity"
             android:exported="true"
             android:label="Home"
             android:windowSoftInputMode="adjustResize"/>
         <activity
-            android:name=".activity.main.ExamResultActivity"
+            android:name=".activity.doctor.DoctorActivity"
+            android:exported="true"
+            android:label="Home"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".activity.doctor.ExamResultActivity"
             android:exported="true"
             android:label="Exam Result"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".activity.main.StudentWorkActivity"
+            android:name=".activity.student.WorkActivity"
             android:exported="true"
             android:label="Works"
             android:windowSoftInputMode="adjustResize" />

@@ -1,17 +1,17 @@
-package mrandroid.app.activity.main;
+package mrandroid.app.activity.student;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import mrandroid.app.databinding.ActivityStudentWorkBinding;
+import mrandroid.app.databinding.ActivityWorkBinding;
 
-public class StudentWorkActivity extends AppCompatActivity {
+public class WorkActivity extends AppCompatActivity {
 
-    private ActivityStudentWorkBinding binding;
+    private ActivityWorkBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityStudentWorkBinding.inflate(getLayoutInflater());
+        binding = ActivityWorkBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.btnSubmit.setOnClickListener(v -> {
