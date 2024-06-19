@@ -35,8 +35,8 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MedicineVi
         ResultModel item = list.get(holder.getAdapterPosition());
 
         holder.tvEmail.setText(item.getEmail());
-        holder.tvScore.setText(item.getEmail());
-        holder.tvDriveLink.setText(item.getEmail());
+        holder.tvScore.setText("Score: " + item.getScore() + "/" + item.getTotal());
+        holder.tvDriveLink.setText(item.getDriveLink());
 
         holder.tvDriveLink.setOnClickListener(view -> {
             listener.onDriveClick(item);

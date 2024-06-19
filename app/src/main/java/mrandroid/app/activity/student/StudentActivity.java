@@ -77,14 +77,12 @@ public class StudentActivity extends AppCompatActivity {
 
             if (questionPosition == questionList.size() - 1) {
                 updateAnswerResult();
-                startActivity(new Intent(getBaseContext(), WorkActivity.class));
-                finish();
 
-//                Intent intent = new Intent(getBaseContext(), ExamResultActivity.class);
-//                intent.putExtra("total", questionList.size());
-//                intent.putExtra("score", correctAnswers);
-//                startActivity(intent);
-//                finish();
+                Intent intent = new Intent(getBaseContext(), WorkActivity.class);
+                intent.putExtra("total", questionList.size());
+                intent.putExtra("score", correctAnswers);
+                startActivity(intent);
+                finishAffinity();
             } else {
                 updateAnswerResult();
                 questionPosition++;

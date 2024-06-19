@@ -38,6 +38,10 @@ public class DoctorActivity extends AppCompatActivity implements QuestionsAdapte
             startActivity(new Intent(getBaseContext(), AddQuestionActivity.class));
         });
 
+        binding.fabStudent.setOnClickListener(view -> {
+            startActivity(new Intent(getBaseContext(), ExamResultActivity.class));
+        });
+
         getAllQuestions();
     }
 

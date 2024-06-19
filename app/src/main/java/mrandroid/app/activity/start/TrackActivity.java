@@ -33,7 +33,6 @@ public class TrackActivity extends AppCompatActivity {
             if (Constants.IS_DOCTOR)
                 startActivity(new Intent(getBaseContext(), DoctorActivity.class));
             else startActivity(new Intent(getBaseContext(), StudentActivity.class));
-            finishAffinity();
         });
 
         binding.tvTrackTwo.setOnClickListener(view -> {
@@ -42,7 +41,6 @@ public class TrackActivity extends AppCompatActivity {
             if (Constants.IS_DOCTOR)
                 startActivity(new Intent(getBaseContext(), DoctorActivity.class));
             else startActivity(new Intent(getBaseContext(), StudentActivity.class));
-            finishAffinity();
         });
 
         binding.tvTrackThree.setOnClickListener(view -> {
@@ -51,7 +49,6 @@ public class TrackActivity extends AppCompatActivity {
             if (Constants.IS_DOCTOR)
                 startActivity(new Intent(getBaseContext(), DoctorActivity.class));
             else startActivity(new Intent(getBaseContext(), StudentActivity.class));
-            finishAffinity();
         });
 
     }

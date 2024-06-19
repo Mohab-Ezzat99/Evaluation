@@ -7,6 +7,9 @@ public class ResultModel {
     private int score;
     private String driveLink;
 
+    public ResultModel() {
+    }
+
     public ResultModel(String email, int total, int score, String driveLink) {
         this.email = email;
         this.total = total;
