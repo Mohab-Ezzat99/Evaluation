@@ -4,14 +4,18 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import mrandroid.app.adapter.ResultAdapter;
 import mrandroid.app.databinding.ActivityExamResultBinding;
 import mrandroid.app.model.ResultModel;
@@ -61,7 +65,14 @@ public class ExamResultActivity extends AppCompatActivity implements ResultAdapt
     @Override
     public void onDriveClick(ResultModel item) {
         String url = item.getDriveLink();
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        startActivity(intent);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+
+        try {
+            startActivity(intent);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            Toast.makeText(this, "The link not valid!", Toast.LENGTH_SHORT).show();
+        }
     }
 }
